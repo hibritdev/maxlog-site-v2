@@ -1,7 +1,76 @@
 <template>
   <v-app>
     <navbar/>
+    <v-toolbar 
+      color="#333"
+      flat
+    >
+      <v-layout
+        justify-space-between
+        row
+        mx-2
+      >
+        <v-img
+          :src="require('../src/assets/img/logo-branca.png')"
+          class="mr-5"
+          contain
+          height="48"
+          max-width="150"
+        />
+        <v-spacer class="hidden-sm-and-down" />
+        <v-btn
+          color="white"
+          href="https://elisalerch.com.br/agendamento"
+          class="ml-0 hidden-sm-and-down"
+          flat
+        >
+          Solicitar uma Cotação
+        </v-btn>
+      </v-layout>
+    </v-toolbar>
     <v-content>
+      <v-parallax :src="background" height="100vh">
+        <v-layout
+          align-center
+          row
+          class="white--text"
+          fluid
+          wrap
+        >
+          <v-flex xs12 md9 style="background-color: indigo">
+            <v-layout row wrap>
+              <v-flex>
+                <v-card flat class>
+                  <v-card-text>
+                    <h1 class="display-3">Entregamos Inteligência Logística e confiança há 17 anos</h1>
+                  </v-card-text>
+                </v-card>
+              </v-flex>
+              <v-flex>
+                <v-btn flat outline color="white">transporte terrestre</v-btn>
+                <v-btn flat outline color="white">transporte aéreo</v-btn>
+                <v-btn flat outline color="white">armazenamento</v-btn>
+                <v-btn flat outline color="white">distribuição</v-btn>
+              </v-flex>
+            </v-layout>
+          </v-flex>
+          <v-flex xs12 md3>
+            <v-card flat class="pa-3">
+              <v-card-title>
+                <v-btn flat>RASTREAR MEU PEDIDO</v-btn>
+                <v-btn flat>SOLICITAR COLETA</v-btn>
+              </v-card-title>
+              <v-card-text>
+                <v-text-field class="px-2" placeholder="Digite seu CPF ou CNPJ"></v-text-field>
+              </v-card-text>
+              <c-vard-actions>
+                <v-btn depressed color="blue">Buscar</v-btn>
+                <v-btn flat>Criar Conta</v-btn>
+              </c-vard-actions>
+            </v-card>
+          </v-flex>
+        </v-layout>
+      </v-parallax>
       <v-container fluid>
         <!-- CAPA -->
         <v-layout row wrap>
