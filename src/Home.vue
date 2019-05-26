@@ -60,17 +60,21 @@
           <v-flex xs12 md6>
             <v-layout row wrap>
               <v-flex xs12>
-                <h1>Sobre Nós</h1>
-              </v-flex>
-              <v-flex xs12>
-                <v-divider></v-divider>
-                <p>A Maxlog é uma empresa de transporte, armazenagem e distribuição com compromisso em qualidade e agilidade desde 2002.</p>
-                <p>Oferecemos soluções inteligentes em logística com constante investimento em tecnologia e aprimoramento de seus processos. Antes de 2002, seus fundadores já tinham experiência em logística</p>
-              </v-flex>
-              <v-flex xs12>
-                <v-btn fab depressed large color="primary">03</v-btn>
-                <v-btn fab outline large flat>12</v-btn>
-                <v-btn fab outline large flat>21</v-btn>
+                <v-card flat class="pr-5 mr-5">
+                  <v-card-title>
+                    <h1>Sobre Nós</h1>
+                  </v-card-title>
+                  <v-divider></v-divider>
+                  <v-card-text>
+                    <p>A Maxlog é uma empresa de transporte, armazenagem e distribuição com compromisso em qualidade e agilidade desde 2002.</p>
+                    <p>Oferecemos soluções inteligentes em logística com constante investimento em tecnologia e aprimoramento de seus processos. Antes de 2002, seus fundadores já tinham experiência em logística</p>
+                  </v-card-text>
+                  <v-card-action>
+                    <v-btn fab depressed large color="primary">03</v-btn>
+                    <v-btn fab outline large flat>12</v-btn>
+                    <v-btn fab outline large flat>21</v-btn>
+                  </v-card-action>
+                </v-card>
               </v-flex>
             </v-layout>
           </v-flex>
