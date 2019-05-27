@@ -11,10 +11,12 @@ import colors from 'vuetify/es5/util/colors'
 
 Vue.use(Vuetify, {
   theme: {
-    primary: colors.red.accent3,
-    secondary: '#FDD2A4',
-    accent: '#D8EBF1',
-    info: '#5B5C79',
+    primary: colors.blue.darken4, // blue
+    secondary: colors.yellow.darken1, // yellow
+    // primary: colors.red.accent3,
+    // secondary: '#FDD2A4',
+    // accent: '#D8EBF1',
+    // info: '#5B5C79',
   },
   iconfont: 'mdi'
 })

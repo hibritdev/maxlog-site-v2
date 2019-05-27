@@ -1,48 +1,38 @@
 <template>
   <v-app>
     <navbar/>
-    <v-toolbar 
-      color="#333"
-      flat
-    >
-      <v-layout
-        justify-space-between
-        row
-        mx-2
-      >
+    <v-toolbar color="#333" flat app>
+      <v-layout row justify-space-between>
         <v-img
           :src="require('../src/assets/img/logo-branca.png')"
-          class="mr-5"
+          class
           contain
           height="48"
-          max-width="150"
+          width="150"
+          position="left"
         />
-        <v-spacer class="hidden-sm-and-down" />
+        <v-spacer class="hidden-sm-and-down"/>
         <v-btn
-          color="white"
+          round
+          large
           href="https://elisalerch.com.br/agendamento"
-          class="ml-0 hidden-sm-and-down"
-          flat
-        >
-          Solicitar uma Cotação
-        </v-btn>
+          class="hidden-sm-and-down font-weight-light"
+          color="secondary primary--text"
+        >Solicitar uma cotação</v-btn>
+        <v-btn round flat large outline color="white" class="font-weight-light">Login</v-btn>
       </v-layout>
     </v-toolbar>
     <v-content>
-      <v-parallax :src="background" height="100vh">
-        <v-layout
-          align-center
-          row
-          class="white--text"
-          fluid
-          wrap
-        >
-          <v-flex xs12 md9 style="background-color: indigo">
+      <v-parallax :src="background" height="760" class>
+        <v-layout align-center justify-space-between row class="white--text pa-5" fluid wrap>
+          <v-flex xs12 md6>
             <v-layout row wrap>
               <v-flex>
-                <v-card flat class>
+                <v-card flat dark color="rgba(255, 0, 0, 0.0)" class>
                   <v-card-text>
-                    <h1 class="display-3">Entregamos Inteligência Logística e confiança há 17 anos</h1>
+                    <h1
+                      class="display-3 mont font-weight-light"
+                    >Entregamos Inteligência Logística e confiança há 17 anos</h1>
                   </v-card-text>
                 </v-card>
               </v-flex>
@@ -55,25 +45,25 @@
             </v-layout>
           </v-flex>
           <v-flex xs12 md3>
-            <v-card flat class="pa-3">
+            <v-card flat class="pa-2">
               <v-card-title>
-                <v-btn flat>RASTREAR MEU PEDIDO</v-btn>
-                <v-btn flat>SOLICITAR COLETA</v-btn>
+                <v-btn flat color="primary">RASTREAR MEU PEDIDO</v-btn>
+                <v-btn flat color="grey">SOLICITAR COLETA</v-btn>
               </v-card-title>
-              <v-card-text>
+              <v-card-text class="mb-4">
                 <v-text-field class="px-2" placeholder="Digite seu CPF ou CNPJ"></v-text-field>
               </v-card-text>
-              <c-vard-actions>
-                <v-btn depressed color="blue">Buscar</v-btn>
-                <v-btn flat>Criar Conta</v-btn>
-              </c-vard-actions>
+              <v-vard-actions>
+                <v-btn depressed color="primary secondary--text">Buscar</v-btn>
+                <v-btn flat color="grey">Criar Conta</v-btn>
+              </v-vard-actions>
             </v-card>
           </v-flex>
         </v-layout>
       </v-parallax>
       <v-container fluid>
         <!-- CAPA -->
-        <v-layout row wrap>
+        <!-- <v-layout row wrap>
           <v-flex xs12 md9 style="background-color: blue">
             <v-img
               :src="require('../src/assets/img/logo-branca.png')"
@@ -122,7 +112,7 @@
               </c-vard-actions>
             </v-card>
           </v-flex>
-        </v-layout>
+        </v-layout>-->
 
         <!-- Sobre Nós -->
         <v-layout row wrap class="py-5">
@@ -131,17 +121,21 @@
               <v-flex xs12>
                 <v-card flat class="pr-5 mr-5">
                   <v-card-title>
-                    <h1>Sobre Nós</h1>
+                    <h1 class="display-2 mont font-weight-light">Sobre Nós</h1>
                   </v-card-title>
-                  <v-divider></v-divider>
+                  <v-divider inset color="yellow" class></v-divider>
                   <v-card-text>
-                    <p>A Maxlog é uma empresa de transporte, armazenagem e distribuição com compromisso em qualidade e agilidade desde 2002.</p>
-                    <p>Oferecemos soluções inteligentes em logística com constante investimento em tecnologia e aprimoramento de seus processos. Antes de 2002, seus fundadores já tinham experiência em logística</p>
+                    <p
+                      class="headline mb-4 pt-4"
+                    >A Maxlog é uma empresa de transporte, armazenagem e distribuição com compromisso em qualidade e agilidade desde 2002.</p>
+                    <p
+                      class="subheading"
+                    >Oferecemos soluções inteligentes em logística com constante investimento em tecnologia e aprimoramento de seus processos. Antes de 2002, seus fundadores já tinham experiência em logística</p>
                   </v-card-text>
                   <v-card-action>
-                    <v-btn fab depressed large color="primary">03</v-btn>
-                    <v-btn fab outline large flat>12</v-btn>
-                    <v-btn fab outline large flat>21</v-btn>
+                    <v-btn fab depressed large color="primary secondary--text">03</v-btn>
+                    <v-btn fab outline large flat color="secondary">12</v-btn>
+                    <v-btn fab outline large flat color="secondary">21</v-btn>
                   </v-card-action>
                 </v-card>
               </v-flex>
@@ -151,7 +145,7 @@
             <v-card flat>
               <v-img src="../src/assets/img/u38.jpg"></v-img>
               <v-card-action>
-                <p class="text-xs-right">Matrix da maxlog, em itaitinga/CE</p>
+                <p class="pt-2 caption text-xs-right">Matrix da maxlog, em itaitinga/CE</p>
               </v-card-action>
             </v-card>
           </v-flex>
@@ -193,14 +187,17 @@
         </v-layout>
 
         <!-- Nossos Serviços -->
-        <v-layout row wrap class="pa-5">
+        <v-layout row wrap class="pa-5 fundoprimario">
           <v-flex xs12 md3 class="pa-3">
-            <v-card flat>
+            <v-card flat dark color="rgba(0, 0, 0, 0)">
               <v-title>
-                <h1>Nossos Serviços</h1>
+                <h1 class="display-2 mont font-weight-light">Nossos Serviços</h1>
               </v-title>
-              <v-text>
-                <p>Com muito compromisso e seriedade, respeitamos nossos clientes buscando otimizar custos e atendê-los com os melhores padrões de serviço do mercado.</p>
+              <v-divider inset color="yellow" class></v-divider>
+              <v-text class>
+                <p
+                  class="subheading mb-4 pt-4"
+                >Com muito compromisso e seriedade, respeitamos nossos clientes buscando otimizar custos e atendê-los com os melhores padrões de serviço do mercado.</p>
               </v-text>
               <v-action>
                 <v-btn fab outline large flat>action</v-btn>
@@ -209,47 +206,58 @@
           </v-flex>
 
           <v-flex xs12 md3 class="pa-3">
-            <v-card flat>
+            <v-card class="elevation-5 pb-2">
               <v-img src="../src/assets/img/u58.jpg"></v-img>
               <v-card-title primary-title>
-                <h3>Transporte Terrestre</h3>
+                <h3 class="headline">Transporte Terrestre</h3>
               </v-card-title>
               <v-card-text>
-                <p>Carga fracionada ou lotação sem limite de peso ou opção de Rodoviário Expresso para os menores prazos de entrega do mercado.</p>
+                <p
+                  class="subheading"
+                >Carga fracionada ou lotação sem limite de peso ou opção de Rodoviário Expresso para os menores prazos de entrega do mercado.</p>
               </v-card-text>
               <v-card-action>
-                <v-btn depressed large dark color="blue yellow--text">Solicitar Orçamento</v-btn>
+                <v-btn depressed large dark color="primary secondary--text">Solicitar Orçamento</v-btn>
               </v-card-action>
             </v-card>
           </v-flex>
           <v-flex xs12 md3 class="pa-3">
-            <v-card flat>
+            <v-card class="elevation-5 pb-2">
               <v-img src="../src/assets/img/u60.jpg"></v-img>
               <v-card-title primary-title>
-                <h3>Transporte Aéreo</h3>
+                <h3 class="headline">Transporte Aéreo</h3>
               </v-card-title>
               <v-card-text>
-                <p>Transporte de carga aérea pelas melhores companhias. Oferecemos as melhores tarifas do mercado. Peça um orçamento e confira!</p>
+                <p
+                  class="subheading"
+                >Transporte de carga aérea pelas melhores companhias. Oferecemos as melhores tarifas do mercado. Peça um orçamento e confira!</p>
               </v-card-text>
               <v-card-action>
-                <v-btn depressed large dark color="blue yellow--text">Solicitar Orçamento</v-btn>
+                <v-btn depressed large dark color="primary secondary--text">Solicitar Orçamento</v-btn>
               </v-card-action>
             </v-card>
           </v-flex>
           <v-flex xs12 md3 class="pa-3">
-            <v-card flat>
+            <v-card class="elevation-5 pb-2">
               <v-img src="../src/assets/img/u59.jpg"></v-img>
               <v-card-title primary-title>
-                <h3>Armazenagem</h3>
+                <h3 class="headline">Armazenagem</h3>
               </v-card-title>
               <v-card-text>
-                <p>Economize tempo e lucre mais com nossa gestão de recebimentos, estocagem, gerenciamento de pedidos e expedição.</p>
+                <p
+                  class="subheading"
+                >Economize tempo e lucre mais com nossa gestão de recebimentos, estocagem, gerenciamento de pedidos e expedição.</p>
               </v-card-text>
               <v-card-action>
-                <v-btn depressed large dark color="blue yellow--text">Solicitar Orçamento</v-btn>
+                <v-btn depressed large dark color="primary secondary--text">Solicitar Orçamento</v-btn>
               </v-card-action>
             </v-card>
           </v-flex>
+        </v-layout>
+
+        <!-- SEGMENTOS -->
+        <v-layout>
+
         </v-layout>
       </v-container>
     </v-content>
@@ -370,4 +378,10 @@ export default {
 </script>
 
 <style>
+.vermelho {
+  background-color: red;
+}
+.fundoprimario {
+  background-color: #0d47a1;
+}
 </style>
